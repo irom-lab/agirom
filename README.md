@@ -92,12 +92,11 @@ The code is licensed under GPLv3. The official license file can be found [here](
 
 For commercial use, please contact sdavide [at] ifi [dot] uzh [dot] ch
 
+# Agilicious Hardware Platform
+If you want to replicate the Agilicious hardware platform, follow this [step-by-step guide](miscellaneous/documentation/hardware_platform.md).
 
 
 # Getting Started
-
-If you want to replicate the Agilicious hardware platform, follow this [step-by-step guide](miscellaneous/documentation/hardware_platform.md).
-
 If you use ROS, simply clone agilicious into your `catkin` workspace and `catkin build`:
 ```
 # Create new catkin workspace.
