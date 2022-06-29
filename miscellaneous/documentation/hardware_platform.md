@@ -21,6 +21,7 @@ Below table lists the hardware components of the Agilicious platform, accompanie
 | TMotor Veloc V2306 V2.0      | Motors               | https://store.tmotor.com/goods.php?id=1106                                                                    |                                                                                |
 | Azure Power SFP 5148         | Propeller            | https://www.drone-fpv-racer.com/en/azure-power-sfp-5148-pc-4pcs-4787.html#/1-color-blue                       |                                                                                |
 | Tattu R-Line 4s 1800mAh 120C | Battery              | https://www.gensace.de/tattu-r-line-version-3-0-1800mah-14-8v-120c-4s1p-lipo-battery-pack-with-xt60-plug.html |                                                                                |
+|                              | Dampers              |                                                                                                               |                                                                                |
 
 
 ## 3D-Printed Parts
@@ -48,15 +49,39 @@ To use the breakout board with up to 6S batteries, we use a DC-DC converter, whi
 
 ## Flash Jetson and Controller
 
-### Flash BetaFlight
+### Flash Betaflight
+Our SBUS bridge is intended to be used together with flight controllers which are used in first person view (FPV) racing. 
+Most common flight controllers used in FPV racing are able to receive SBUS commands and can therefore be used together with our SBUS bridge. 
+On these flight controllers, we use the open-source Betaflight firmware since it is easily and transparently configurable.
 
+**Betaflight Configurator**</br>
+To flash and use this firmware, you first need to install the [etaflight Configurator](https://github.com/betaflight/betaflight-configurator) by following the steps in their installation instructions.
+
+**Flashing the Betaflight Firmware**</br>
 TODO
+
+**Setting the Agilicious Parameters**</br>
+Some of the parameters set in the SBUS bridge in Agilicious need to correspond to the settings made on the flight controller in the Betaflight Firmware. 
+We provide the Betaflight parameters that should be used together with the default settings of the SBUS bridge. 
+To apply these parameters, connect your flight controller to your computer with an USB cable, 
+start the Betaflight Configurator, and press Connect in the top right corner. 
+Then navigate to the CLI tab which should bring you to the following view:
+![alt text](img/betaflight_cli.png "betaflight cli")
+
+Then, copy all the text from our provided [Betaflight parameter file](TODO), paste it into the command line in the CLI tab of the Betaflight Configurator and hit Enter. 
+Wait until all the parameters are set, then type `save` into the command line and hit Enter. 
+The flight controller will reboot and should be set up to be used with the SBUS bridge and Agilicious. 
+Note that the most important settings for working smoothly with our SBUS bridge are the rate curves which determine how SBUS commands are translated into body-rate commands in the firmware. 
+These curves are set by parameters as described above but can still be inspected in the PID Tuning tab in the Betaflight Configurator. 
+We require these curves to be linear and the respective maximum values to correspond to the the max_roll_rate, max_pitch_rate, and max_yaw_rate parameters set in the SBUS bridge parameters.
+
 
 ### Flash Jetson TX2
 This setup assumes that you have a fresh Jetson TX2. 
 
-**Preparing the OS image for the Jetson**
-1. Download software from [here](http://connecttech.com/product/quasar-carrier-nvidia-jetson-tx2/).
+**Preparing the OS image for the Jetson**</br>
+1. Download the drivers for your breakout board from [here](http://connecttech.com/product/quasar-carrier-nvidia-jetson-tx2/).
+   **Note:** If you use the Orbitty carrier, download the drivers from [here](https://connecttech.com/product/orbitty-carrier-for-nvidia-jetson-tx2-tx1/).
 2. Open Nvidia SDK manager and install JetPack 
     - If not yet installed, download the SDK manager from [here](https://developer.nvidia.com/nvidia-sdk-manager).</br>
       ATTENTION: Do NOT install anything on the host machine, it very likely wrecks your ROS installation (for that uncheck the option to install something on your computer on the first page of the SDK)!
@@ -72,12 +97,12 @@ This setup assumes that you have a fresh Jetson TX2.
     - `cd ..`
 4. The `CTI-L4T BSP` is now installed on the host system and you should now be able to flash the TX2.
 
-**Disabling the Serial Console**
+**Disabling the Serial Console**</br>
 This step is only needed when the serial console port is used for the mavlink messages to get the battery voltage feedback from the flight controller. 
 The serial console port can also be disabled after flashing. 
 Follow the steps [here](https://connecttech.com/resource-center/kdb347-reassigning-disable-serial-debug-connect-tech-tx1-carriers/)
 
-**Flashing the Jetson**
+**Flashing the Jetson**</br>
 1. These steps explain the flashing procedure with either the NVidia Dev-Kit or with the Jetson TX2 already mounted on the ConnectTech breakout board. 
    Both breakout board types feature the required buttons (PWR, RST, REC) and support the flashing procedure. 
 2. Connect the TX2 mounted on the breakout board to the computer via micro-USB and  plug in the power cable. 
@@ -91,21 +116,21 @@ Follow the steps [here](https://connecttech.com/resource-center/kdb347-reassigni
    After selecting the breakout board, select the Base configuration.
 5. Once the flashing has completed, the TX2 will reboot. 
 
-**Initial Setup Routine**
+**Initial Setup Routine**</br>
 After successfully flashing the Jetson, perform the initial setup routine. 
 The easiest way to do this is by connecting it to a screen, mouse & keyboard. 
 
-**Install CUDA/cuDNN/OpenCV/TensorRT**
+**Install CUDA/cuDNN/OpenCV/TensorRT**</br>
 The add-on software packages like CUDA/cuDNN/OpenCV/ect that JetPack installs aren’t flashed over USB like L4T is.
 JetPack installs those packages during the post-install steps using the network.
 To do this, connect the Jetson that is either mounted on the Dev-Kit or already on the breakout board on the drone, via USB to your laptop. 
 Startup the SDK manager, and only select to install the add-on software. 
 In the popup-window, leave the IP as is and enter username & pw (that you configured in the previous step) of the Jetson. 
 
-**Final Steps**
+**Final Steps**</br>
 Almost done! Here are some last steps before your Jetson is ready to take off:
 
-- To make your new Jetson ready for autonomous flight, you likely need to install ROS, follow the official instructions for this. 
+- To make your new Jetson ready for autonomous flight with Agilicious, you need to install ROS, follow the official instructions for this. 
 - If you want to use the serial port on the Jetson, add the user to the `dialout` group: 
   ```
   sudo usermod -a -G dialout $USER
