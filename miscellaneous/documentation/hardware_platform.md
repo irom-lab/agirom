@@ -22,6 +22,7 @@ Below table lists the hardware components of the Agilicious platform, accompanie
 | Azure Power SFP 5148         | Propeller            | https://www.drone-fpv-racer.com/en/azure-power-sfp-5148-pc-4pcs-4787.html#/1-color-blue                       |                                                                                |
 | Tattu R-Line 4s 1800mAh 120C | Battery              | https://www.gensace.de/tattu-r-line-version-3-0-1800mah-14-8v-120c-4s1p-lipo-battery-pack-with-xt60-plug.html |                                                                                |
 |                              | Dampers              |                                                                                                               |                                                                                |
+|                              | Voltage Converter    |                                                                                                               |                                                                                |
 
 
 ## 3D-Printed Parts
