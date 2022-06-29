@@ -96,12 +96,15 @@ For commercial use, please contact sdavide [at] ifi [dot] uzh [dot] ch
 
 # Getting Started
 
+If you want to replicate the Agilicious hardware platform, follow this [step-by-step guide](miscellaneous/documentation/hardware_platform.md).
+
 If you use ROS, simply clone agilicious into your `catkin` workspace and `catkin build`:
 ```
 # Create new catkin workspace.
 cd catkin_ws/src
 
 git clone https://github.com/catkin/catkin_simple
+git clone https://github.com/ethz-asl/mav_comm.git
 git clone git@github.com:uzh-rpg/agilicious.git
 
 catkin build
@@ -116,7 +119,7 @@ cmake ..
 make
 ```
 
-It is highly recommended to run agilicious inside a docker container, instructions are available [here](miscellaneous/how_to_docker.md).
+It is highly recommended to run agilicious inside a docker container, instructions are available [here](miscellaneous/documentation/how_to_docker.md).
 
 ## Launch your first simulation:
 
