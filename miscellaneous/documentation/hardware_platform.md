@@ -32,7 +32,7 @@ All 3D-printed parts, together with a complete 3D model of the quadrotor can be 
 
 ### Mechanical Setup
 
-TODO: add nice picture of quadrotor
+![alt text](img/quadrotor.png "quadrotor")
 
 Sand the edges of the carbon fiber frame (so cables that touch the edges will not lose their isolation and short through conducting carbon fibers). 
 If Additional holes are required, drill those before mounting any other parts (take an old drill bit, they wear out quickly in carbon fiber). 
