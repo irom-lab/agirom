@@ -6,6 +6,7 @@ This step-by-step guide allows you to replicate the quadrotor research platform 
 3. [Assemble Quadrotor](#assemble-quadrotor)
 4. [Flash Jetson and Low-Level Controller](#flash-jetson-and-controller)
 
+![alt text](img/drone.jpg "quadrotor")
 
 
 ## Buy the Components
