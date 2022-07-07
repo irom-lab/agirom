@@ -57,7 +57,7 @@ In summary, this library offers the following modules:
 * Controllers
   * Model Predictive Control descred in [Falanga IROS'18](https://rpg.ifi.uzh.ch/docs/IROS18_Falanga.pdf) and [Sun TRO'22](https://rpg.ifi.uzh.ch/docs/Arxiv21_MPC_Sun.pdf)
   * Incremental Nonlinear Dynamic Inversion described in [Sun TRO'20](https://ieeexplore.ieee.org/document/9160894)
-  * Geometric Control described in [Sun TRO'22](https://rpg.ifi.uzh.ch/docs/Arxiv21_MPC_Sun.pdf)
+  * Differential-Flatness-Based Geometric Control described in [Sun TRO'22](https://rpg.ifi.uzh.ch/docs/Arxiv21_MPC_Sun.pdf)
   * Cascaded PID similar to [Faessler RAL'18](https://rpg.ifi.uzh.ch/docs/RAL18_Faessler.pdf)
 * Estimators
   * A standard EKF using a pose estimate and propagating with IMU measurements.
