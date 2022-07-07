@@ -35,7 +35,7 @@ All 3D-printed parts, together with a complete 3D model of the quadrotor can be 
 ![alt text](img/quadrotor.png "quadrotor")
 
 Sand the edges of the carbon fiber frame (so cables that touch the edges will not lose their isolation and short through conducting carbon fibers). 
-If Additional holes are required, drill those before mounting any other parts (take an old drill bit, they wear out quickly in carbon fiber). 
+If additional holes are required, drill those before mounting any other parts (take an old drill bit, they wear out quickly in carbon fiber). 
 Press inserts in 3D-printed parts before mounting them (use a fitting metal bolt and the vice to do so). 
 Be aware that some of the bolts are explicitly supposed to be plastic as they are mounted where the parts are supposed to break in a crash.
 
@@ -56,10 +56,18 @@ Most common flight controllers used in FPV racing are able to receive SBUS comma
 On these flight controllers, we use the open-source Betaflight firmware since it is easily and transparently configurable.
 
 **Betaflight Configurator**</br>
-To flash and use this firmware, you first need to install the [etaflight Configurator](https://github.com/betaflight/betaflight-configurator) by following the steps in their installation instructions.
+To flash and use this firmware, you first need to install the [Betaflight Configurator](https://github.com/betaflight/betaflight-configurator) by following the steps in their installation instructions.
 
 **Flashing the Betaflight Firmware**</br>
-TODO
+Flashing the Betaflight Firmware onto the flight controller (FC) can be a tedious process. We recommend to run Betaflight Configurator on Windows to flash the flight controller, as we often experienced problems when doing the process under Linux. 
+1. Start BetaflightConfigurator
+2. While connecting the FC to the USB port of the computer, press the _boot_ button. On some older FC boards there is no boot push-botton. In this case a pair of tweezers can be used to connect the _boot_ jumper to _GND_ during the power-on process. Once the board is on, the boot button can be released again.
+3. Now, Betaflight Configurator should show the board is in "DFU Mode" as indicated on the right top part of the screen.
+4. Choose a Firmware Release. We recommend 4.2.0 or 4.3.0 for best results. Now, select "Load Firmware [Online]"
+5. Disable the options "Flash on connect"
+6. Enable the options "No reboot sequence" (since the board is already in DFU mode) and enable "Full chip erase"
+7. Click on "Flash Firmware"
+8. Reconnect the board and apply the custom defaults for the board as suggested by Betaflight Configurator
 
 **Setting the Agilicious Parameters**</br>
 Some of the parameters set in the SBUS bridge in Agilicious need to correspond to the settings made on the flight controller in the Betaflight Firmware. 
