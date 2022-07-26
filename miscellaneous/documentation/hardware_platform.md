@@ -144,4 +144,4 @@ Almost done! Here are some last steps before your Jetson is ready to take off:
   sudo usermod -a -G dialout $USER
   ```
 
-Back to [Getting Started](https://github.com/uzh-rpg/agilicious_internal/blob/main/README.md#getting-started).
+Back to [Getting Started](https://github.com/uzh-rpg/agilicious/blob/main/README.md#getting-started).
