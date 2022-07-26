@@ -21,8 +21,8 @@ Below table lists the hardware components of the Agilicious platform, accompanie
 | TMotor Veloc V2306 V2.0      | Motors               | https://store.tmotor.com/goods.php?id=1106                                                                    |                                                                                |
 | Azure Power SFP 5148         | Propeller            | https://www.drone-fpv-racer.com/en/azure-power-sfp-5148-pc-4pcs-4787.html#/1-color-blue                       |                                                                                |
 | Tattu R-Line 4s 1800mAh 120C | Battery              | https://www.gensace.de/tattu-r-line-version-3-0-1800mah-14-8v-120c-4s1p-lipo-battery-pack-with-xt60-plug.html |                                                                                |
-|                              | Dampers              |                                                                                                               |                                                                                |
-|                              | Voltage Converter    |                                                                                                               |                                                                                |
+| Anti-Vibration Rubber Damper | Dampers              | https://de.aliexpress.com/item/1891055875.html (or similar)                                                   | If not flying vision-based, dampers can be omitted.                            |
+| Recom Power R-78B9.0-2.0     | Voltage Converter    | https://www.digikey.ch/product-detail/de/recom-power/R-78B9-0-2-0/945-3277-ND/6677073                         |                                                                                |
 
 
 ## 3D-Printed Parts
@@ -136,3 +136,6 @@ Almost done! Here are some last steps before your Jetson is ready to take off:
   ```
   sudo usermod -a -G dialout $USER
   ```
+  
+
+Back to [Getting Started](https://github.com/uzh-rpg/agilicious_internal/blob/main/README.md#getting-started).
