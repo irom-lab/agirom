@@ -3,8 +3,8 @@
   <br>
   <b>Agile flight done right!</b>
   <br>
-  <img src="https://github.com/uzh-rpg/agilicious/workflows/CLANG_CI/badge.svg?branch=master">
-  <img src="https://github.com/uzh-rpg/agilicious/workflows/clang_format/badge.svg?branch=master">
+  <img src="https://github.com/uzh-rpg/agilicious_internal/workflows/CLANG_CI/badge.svg?branch=main">
+  <img src="https://github.com/uzh-rpg/agilicious_internal/workflows/clang_format/badge.svg?branch=main">
   <br>
   <img src="https://user-images.githubusercontent.com/17403970/174497361-aa212d77-7036-4f36-840d-c48cab492ac2.gif" width="700">
   <img src="https://user-images.githubusercontent.com/21340299/174775412-9595e3ed-7ef9-403b-ab08-0dbe4126243f.gif" width="350">
@@ -35,9 +35,9 @@ Additionally, please cite the following papers for the specific extensions you m
 
 * Sihao Sun, Angel Romero, Philipp Foehn, Elia Kaufmann, Davide Scaramuzza, ["A Comparative Study of Nonlinear MPC and Differential-Flatness-based Control for Quadrotor Agile Flight"](https://rpg.ifi.uzh.ch/docs/Arxiv21_MPC_Sun.pdf), IEEE Transactions on Robotics, 2022, [Video](https://www.youtube.com/watch?v=XpuRpKHp_Bk), [Bibtex](miscellaneous/references/Sun2022tro.bib)
 * Philipp Foehn, Angel Romero, Davide Scaramuzza, ["Time-Optimal Planning for Quadrotor Waypoint Flight"](https://rpg.ifi.uzh.ch/docs/ScienceRobotics21_Foehn.pdf), Science Robotics, 2021, [Video](https://youtu.be/ZPI8U1uSJUs), [Bibtex](miscellaneous/references/Foehn2021Science.bib)
-* Antonio Loquercio, Elia Kaufmann, Rene Ranftl, Mark Müller, Vladlen Koltun, Davide Scaramuzza, ["Learning High-Speed Flight in the Wild"](https://rpg.ifi.uzh.ch/docs/Loquercio21_Science.pdf), Science Robotics, 2021, [Video](https://www.youtube.com/watch?v=m89bNn6RFoQ), [Bibtex](miscellaneous/references/Loquercio2021Science.bib)
+* Antonio Loquercio, Elia Kaufmann, Rene Ranftl, Matthias Müller, Vladlen Koltun, Davide Scaramuzza, ["Learning High-Speed Flight in the Wild"](https://rpg.ifi.uzh.ch/docs/Loquercio21_Science.pdf), Science Robotics, 2021, [Video](https://www.youtube.com/watch?v=m89bNn6RFoQ), [Bibtex](miscellaneous/references/Loquercio2021Science.bib)
 * Leonard Bauersfeld, Elia Kaufmann, Philipp Foehn, Sihao Sun, Davide Scaramuzza, ["NeuroBEM: Hybrid Aerodynamic Quadrotor Model"](https://rpg.ifi.uzh.ch/docs/RSS21_Bauersfeld.pdf), RSS: Robotics, Science, and Systems, 2021, [Video](https://youtu.be/Nze1wlfmzTQ), [Bibtex](miscellaneous/references/Bauersfeld2021rss.bib)
-* Elia Kaufmann, Antonio Loquercio, Rene Ranftl, Mark Müller, Vladlen Koltun, Davide Scaramuzza, ["Deep Drone Acrobatics"](https://rpg.ifi.uzh.ch/docs/RSS20_Kaufmann.pdf), RSS: Robotics, Science, and Systems, 2020, [Video](https://youtu.be/2N_wKXQ6MXA),  [Bibtex](miscellaneous/references/Kaufmann2020rss.bib)
+* Elia Kaufmann, Antonio Loquercio, Rene Ranftl, Matthias Müller, Vladlen Koltun, Davide Scaramuzza, ["Deep Drone Acrobatics"](https://rpg.ifi.uzh.ch/docs/RSS20_Kaufmann.pdf), RSS: Robotics, Science, and Systems, 2020, [Video](https://youtu.be/2N_wKXQ6MXA),  [Bibtex](miscellaneous/references/Kaufmann2020rss.bib)
 * Matthias Faessler, Antonio Franchi, Davide Scaramuzza, ["Differential Flatness of Quadrotor Dynamics Subject to Rotor Drag for Accurate Tracking of High-Speed Trajectories"](https://rpg.ifi.uzh.ch/docs/RAL18_Faessler.pdf), IEEE Robotics and Automation Letters, 2018, [Video](https://youtu.be/VIQILwcM5PA), [Bibtex](miscellaneous/references/Faessler18ral.bib)
 
 # What's in it for you?
@@ -57,7 +57,7 @@ In summary, this library offers the following modules:
 * Controllers
   * Model Predictive Control descred in [Falanga IROS'18](https://rpg.ifi.uzh.ch/docs/IROS18_Falanga.pdf) and [Sun TRO'22](https://rpg.ifi.uzh.ch/docs/Arxiv21_MPC_Sun.pdf)
   * Incremental Nonlinear Dynamic Inversion described in [Sun TRO'20](https://ieeexplore.ieee.org/document/9160894)
-  * Geometric Control described in [Sun TRO'22](https://rpg.ifi.uzh.ch/docs/Arxiv21_MPC_Sun.pdf)
+  * Differential-Flatness-Based Geometric Control described in [Sun TRO'22](https://rpg.ifi.uzh.ch/docs/Arxiv21_MPC_Sun.pdf)
   * Cascaded PID similar to [Faessler RAL'18](https://rpg.ifi.uzh.ch/docs/RAL18_Faessler.pdf)
 * Estimators
   * A standard EKF using a pose estimate and propagating with IMU measurements.
@@ -92,12 +92,11 @@ The code is licensed under GPLv3. The official license file can be found [here](
 
 For commercial use, please contact sdavide [at] ifi [dot] uzh [dot] ch
 
+# Agilicious Hardware Platform
+If you want to replicate the Agilicious hardware platform, follow this [step-by-step guide](miscellaneous/documentation/hardware_platform.md).
 
 
 # Getting Started
-
-If you want to replicate the Agilicious hardware platform, follow this [step-by-step guide](miscellaneous/documentation/hardware_platform.md).
-
 If you use ROS, simply clone agilicious into your `catkin` workspace and `catkin build`:
 ```
 # Create new catkin workspace.
