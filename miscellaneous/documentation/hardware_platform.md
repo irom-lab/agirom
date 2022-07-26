@@ -33,8 +33,6 @@ All 3D-printed parts, together with a complete 3D model of the quadrotor can be 
 
 ### Mechanical Setup
 
-TODO: add nice picture of quadrotor
-
 Sand the edges of the carbon fiber frame (so cables that touch the edges will not lose their isolation and short through conducting carbon fibers). 
 If additional holes are required, drill those before mounting any other parts (take an old drill bit, they wear out quickly in carbon fiber). 
 Press inserts in 3D-printed parts before mounting them (use a fitting metal bolt and the vice to do so). 
@@ -145,3 +143,5 @@ Almost done! Here are some last steps before your Jetson is ready to take off:
   ```
   sudo usermod -a -G dialout $USER
   ```
+
+Back to [Getting Started](https://github.com/uzh-rpg/agilicious_internal/blob/main/README.md#getting-started).
