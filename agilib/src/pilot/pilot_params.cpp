@@ -49,7 +49,7 @@ PilotParams::PilotParams(const fs::path& filename, const fs::path& directory,
     throw ParameterException("Pilot Config file not found!\n" +
                              filename.string() + "\n" + full_filename.string());
 
-  std::cout << "Loading Pilot parameters from " << full_filename << std::endl;
+  logger_.info("Loading Pilot parameters from [%s].", full_filename.c_str());
 
   if (!ParameterBase::load(full_filename))
     throw ParameterException(full_filename);
