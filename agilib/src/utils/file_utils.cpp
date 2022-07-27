@@ -29,7 +29,7 @@ fs::path getQuadFile(const Yaml& yaml, const fs::path& quad_file_yaml,
   std::vector<fs::path> possible_paths{agi_param_directory,
                                        agi_param_directory / "quads"};
   if (!quad_file.empty()) {
-    if (quad_file.has_filename()) {
+    if (quad_file.has_extension()) {
       if (quad_file.is_absolute()) {
         possible_paths.clear();
       }
@@ -55,9 +55,9 @@ fs::path getQuadFile(const Yaml& yaml, const fs::path& quad_file_yaml,
 
   if (!quad_file_from_yaml.empty()) {
     if (!quad_file.empty())
-      throw ParameterException("Quadrotor file is set manually an in YAML!");
+      throw ParameterException("Quadrotor file is set manually and in YAML!");
 
-    if (!quad_file_from_yaml.has_filename())
+    if (!quad_file_from_yaml.has_extension())
       throw ParameterException("Quadrotor file is no filename!");
 
     quad_file = quad_file_from_yaml;
