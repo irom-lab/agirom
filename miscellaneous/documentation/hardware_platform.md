@@ -27,7 +27,7 @@ Below table lists the hardware components of the Agilicious platform, accompanie
 
 
 ## 3D-Printed Parts
-All 3D-printed parts, together with a complete 3D model of the quadrotor can be found [here](https://cad.onshape.com/documents/81f2b419267a00337dc816ca/w/22f261270ecd200d75284f7e/e/a2769eb28b03773dbdd61386).
+All 3D-printed parts, together with a complete 3D model of the quadrotor can be found [here](https://cad.onshape.com/documents/81f2b419267a00337dc816ca/w/22f261270ecd200d75284f7e/e/e302e160de20b85a9bc53432).
 
 ## Assemble Quadrotor
 
