@@ -144,6 +144,9 @@ For launching a real flight, you need to connect a RealSense T265 to the USB por
 6. Arm your quad by pressing the `Arm Bridge`. The rotors should spin at this stage.
 7. If everything looks sane, press `Start` to takeoff!
 
+## Datasets
+To compare tracking performance with the Agilicious platform, use the datasets (rosbag & csv) available [here]().
+
 # Documentation
 
 For documentation, we now use [Doxygen](https://www.doxygen.nl/index.html)!
