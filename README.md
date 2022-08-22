@@ -145,7 +145,7 @@ For launching a real flight, you need to connect a RealSense T265 to the USB por
 7. If everything looks sane, press `Start` to takeoff!
 
 ## Datasets
-To compare tracking performance with the Agilicious platform, use the datasets (rosbag & csv) available [here]().
+To compare tracking performance with the Agilicious platform, use the datasets (rosbag & csv) available [here](https://github.com/uzh-rpg/agilicious_internal/tree/main/miscellaneous/datasets).
 
 # Documentation
 
