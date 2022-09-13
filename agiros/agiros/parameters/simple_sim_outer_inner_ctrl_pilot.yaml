@@ -19,9 +19,9 @@ pipeline:
 
 quadrotor:              "kingfisher.yaml"
 
-dt_min:                 0.01
+dt_min:                 0.0033
 dt_telemetry:           0.02  # Publish telemetry messages with this period (used for GUI and IMU)
-outerloop_divisor:	3
+outerloop_divisor:	3 # Number of inner-loop control steps for every outer-loop control step
 
 traj_type:              "poly_min_snap"
 velocity_in_bodyframe:  false
