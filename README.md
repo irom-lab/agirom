@@ -134,7 +134,7 @@ These simulation environments allow the user to test their code by offering a us
 </div>
 
 ### How do I change the characteristics of my simulation?
-Everything is structured in `.yaml` files. The most important of these `.yaml` files is the so-called "Pilot" file. For example, when launching the Agisim simulation, the `agiros/agiros/parameters/simple_sim_pilot.yaml` file is used. Here, the user can define which controller to use, which estimator to use, which quadrotor model to use, etc. If one were to change the mass of the quadrotor, for example, one would in this case need to modify the `agiros/agiros/parameters/quads/kingfisher.yaml` file.
+Everything is structured in `.yaml` files. The most important of these `.yaml` files is the so-called "Pilot" file. For example, when launching the Agisim simulation, the `agiros/agiros/parameters/simple_sim_pilot.yaml` file is used. Here, the user can define which outer / inner controller to use, which estimator to use, which quadrotor model to use, etc. If one were to change the mass of the quadrotor, for example, one would in this case need to modify the `agiros/agiros/parameters/quads/kingfisher.yaml` file.
 
 ## Launch your first real flight:
 For launching a real flight, you need to connect a RealSense T265 to the USB port of the onboard jetson TX2. The procedure to launch your quadrotor is very simple:
