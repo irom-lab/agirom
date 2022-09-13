@@ -55,10 +55,12 @@ In summary, this library offers the following modules:
   provide a modular way to combine controllers, estimators, reference trajectories into a complete control system.
   It is posible to create multiple pipelines and switch between them at runtime, allowing rapid prototyping.
 * Controllers
-  * Model Predictive Control descred in [Falanga IROS'18](https://rpg.ifi.uzh.ch/docs/IROS18_Falanga.pdf) and [Sun TRO'22](https://rpg.ifi.uzh.ch/docs/Arxiv21_MPC_Sun.pdf)
-  * Incremental Nonlinear Dynamic Inversion described in [Sun TRO'20](https://ieeexplore.ieee.org/document/9160894)
-  * Differential-Flatness-Based Geometric Control described in [Sun TRO'22](https://rpg.ifi.uzh.ch/docs/Arxiv21_MPC_Sun.pdf)
-  * Cascaded PID similar to [Faessler RAL'18](https://rpg.ifi.uzh.ch/docs/RAL18_Faessler.pdf)
+  + Outerloop controller
+    + Model Predictive Control described in [Falanga IROS'18](https://rpg.ifi.uzh.ch/docs/IROS18_Falanga.pdf) and [Sun TRO'22](https://rpg.ifi.uzh.ch/docs/Arxiv21_MPC_Sun.pdf)
+    + Differential-Flatness-Based Geometric Control described in [Sun TRO'22](https://rpg.ifi.uzh.ch/docs/Arxiv21_MPC_Sun.pdf)
+  + Innerlop controller
+    + Incremental Nonlinear Dynamic Inversion described in [Sun TRO'20](https://ieeexplore.ieee.org/document/9160894)
+    + Cascaded PID similar to [Faessler RAL'18](https://rpg.ifi.uzh.ch/docs/RAL18_Faessler.pdf)
 * Estimators
   * A standard EKF using a pose estimate and propagating with IMU measurements.
   * An EKF that uses a constant acceleration model and the Pose + IMU measurements.
