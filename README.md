@@ -137,6 +137,7 @@ These simulation environments allow the user to test their code by offering a us
 Everything is structured in `.yaml` files. The most important of these `.yaml` files is the so-called "Pilot" file. For example, when launching the Agisim simulation, the `agiros/agiros/parameters/simple_sim_pilot.yaml` file is used. Here, the user can define which outer / inner controller to use, which estimator to use, which quadrotor model to use, etc. If one were to change the mass of the quadrotor, for example, one would in this case need to modify the `agiros/agiros/parameters/quads/kingfisher.yaml` file.
 
 ## Launch your first real flight:
+### Vision-based flight
 For launching a real flight, you need to connect a RealSense T265 to the USB port of the onboard jetson TX2. The procedure to launch your quadrotor is very simple:
 1. Boot up the Jetson TX2.
 2. Inside the Jetson TX2, compile the Agilicious codebase.
@@ -145,6 +146,20 @@ For launching a real flight, you need to connect a RealSense T265 to the USB por
 5. In your computer you will see the same GUI that pops up when you run a simulation. Press the `Connect` button and the voltage and state estimation values should appear in the GUI. Note that this time, the voltage value and the state estimation values come from the real hardware. Make sure that these values are sane and consistent.
 6. Arm your quad by pressing the `Arm Bridge`. The rotors should spin at this stage.
 7. If everything looks sane, press `Start` to takeoff!
+
+### Run controller onboad and fly with VICON:
+You can also run your controller onboard the Jetson TX2 with VICON, by following these steps:
+1. Boot up the Jetson TX2.
+2. Inside the Jetson TX2, compile the Agilicious codebase.
+3. Set the onboard_pilot.yaml to change the controller, estimator, and other meta parameters (such as control frequency). There are two outer controllers of choice: MPC and GEO. Both controllers generate motor thrust commands that can be used directly by the low-level controller. On top of that, you may also activate inner controllers to adapt these commands for improving robustness. There are two inner controllers of choice: PID and INDI.
+4. You can change the parameters of each controller in the corresponding yaml file. For example, to alter gains of MPC, use mpc.yaml (located in agilib/params folder)
+5. You can change the parameters of the bridge connecting to the low-level board in ctrl.yaml, such as port name, baud rate, etc. This low-level board should be able to feed the thrust commands of each motor to the ESC, and return RPM measurement.
+6. On your laptop, launch the GUI, VRPN client, and Rviz by running: `roslaunch arena_base_computer_onboard.launch quad_name:=<your quad name>`
+7. On Jetson TX2, launch the controllers and VICON-based estimation by running: `roslaunch arena_quadrotor_onboard.launch quad_name:=<your quad name>`
+8. In your computer you will see the same GUI that pops up when you run a simulation. Press the `Connect` button and the voltage and state estimation values should appear in the GUI. Note that this time, the voltage value and the state estimation values come from the real hardware. Make sure that these values are sane and consistent.
+9. Arm your quad by pressing the `Arm Bridge`. The rotors should spin at this stage.
+10. If everything looks sane, press `Start` to takeoff!
+11. You can import the reference trajectory in .csv format in the GUI. We have provided several reference trajectories as examples. They are stored in miscellaneous/datasets/ref_trajs.zip (ATTENTION: These references are rather fast. Test them in the simulation before hand!!). The CPC33_Z1.csv is the reference being used in Fig.13 of [Sun TRO'22](https://rpg.ifi.uzh.ch/docs/Arxiv21_MPC_Sun.pdf). We have also included the flight data in miscellaneous/datasets/CPC33_data.zip for the users for comparison.
 
 ## Datasets
 To compare tracking performance with the Agilicious platform, use the datasets (rosbag & csv) available [here](https://github.com/uzh-rpg/agilicious_internal/tree/main/miscellaneous/datasets).
