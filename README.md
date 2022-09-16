@@ -159,7 +159,7 @@ You can also run your controller onboard the Jetson TX2 with VICON, by following
 8. In your computer you will see the same GUI that pops up when you run a simulation. Press the `Connect` button and the voltage and state estimation values should appear in the GUI. Note that this time, the voltage value and the state estimation values come from the real hardware. Make sure that these values are sane and consistent.
 9. Arm your quad by pressing the `Arm Bridge`. The rotors should spin at this stage.
 10. If everything looks sane, press `Start` to takeoff!
-11. You can import the reference trajectory in .csv format in the GUI. We have provided several reference trajectories as examples (ATTENTION: Test them in the simulation first!!).
+11. You can import the reference trajectory in .csv format in the GUI. We have provided several reference trajectories as examples. They are stored in miscellaneous/datasets/ref_trajs.zip (ATTENTION: These references are rather fast. Test them in the simulation before hand!!). The CPC33_Z1.csv is the reference being used in Fig.13 of [Sun TRO'22](https://rpg.ifi.uzh.ch/docs/Arxiv21_MPC_Sun.pdf). We have also included the flight data in miscellaneous/datasets/CPC33_data.zip for the users for comparison.
 
 ## Datasets
 To compare tracking performance with the Agilicious platform, use the datasets (rosbag & csv) available [here](https://github.com/uzh-rpg/agilicious_internal/tree/main/miscellaneous/datasets).
