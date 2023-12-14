@@ -87,6 +87,8 @@ class Pipeline {
   int outerloop_counter_{-1};
   bool stop_after_feedthrough_;
   Scalar feedthrough_timeout_{0.05};
+  bool planner_active_{false};
+  Scalar planner_start_t_{0};
 
   std::vector<PipelineCallbackFunction> callbacks_;
 };

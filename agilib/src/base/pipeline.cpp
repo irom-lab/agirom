@@ -1,6 +1,7 @@
 #include "agilib/base/pipeline.hpp"
 
 #include "agilib/reference/hover_reference.hpp"
+#include "agilib/reference/trajectory_reference/polynomial_trajectory.hpp"
 
 namespace agi {
 
@@ -65,6 +66,38 @@ bool Pipeline::run(const Scalar t) {
       return false;
     }
   }
+
+  if (!references_.empty() && references_.front()->isHover() && !planner_active_) {
+    planner_active_ = true;
+    planner_start_t_ = t;
+
+    const Scalar target_duration = 5;
+    const Vector<3> target_p = Vector<3>(5, 5, 5);
+    const Scalar target_yaw = 0;
+
+    const QuadState start_state = state_;
+    const QuadState end_state(planner_start_t_ + target_duration, target_p, target_yaw);
+    const MinJerkTrajectory trajectory(start_state, end_state);
+
+    references_.clear();
+    references_.push_back(std::make_shared<MinJerkTrajectory>(trajectory));
+  }
+
+  // if (planner_active_) {
+  //   const Scalar target_duration = 10;
+  //   const Vector<3> target_p = Vector<3>(5, 5, 5);
+  //   const Scalar target_yaw = 0;
+
+  //   const QuadState start_state = state_;
+  //   const QuadState end_state(planner_start_t_ + target_duration, target_p, target_yaw);
+  //   const MinJerkTrajectory trajectory(start_state, end_state);
+
+  //   references_.clear();
+  //   references_.push_back(std::make_shared<MinJerkTrajectory>(trajectory));
+  //   // insertReference(std::make_shared<MinJerkTrajectory>(trajectory));
+
+  //   logger_ << start_state;
+  // }
 
   if (references_.empty()) {
     command_ = Command(t);

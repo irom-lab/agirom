@@ -34,3 +34,5 @@ GPATH
 agilib/build/*
 
 **/.DS_Store
+
+.venv/
