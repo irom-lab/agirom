@@ -1,7 +1,7 @@
 pipeline:
   estimator:
-    type:               "EKFIMU"
-    file:               "ekf_imu.yaml"
+    type:               "Feedthrough"
+    file:               "feedthrough.yaml"
 
   sampler:
     type:               "Time"

@@ -64,6 +64,7 @@ void AgiSim::simLoop() {
     ros::WallTime t_start_sim = ros::WallTime::now();
     QuadState quad_state;
     simulator_.getState(&quad_state);
+    std::cout << "[AgiSim::simLoop] quad_state = " << quad_state << std::endl;
     rosgraph_msgs::Clock curr_time;
     curr_time.clock.fromSec(quad_state.t);
     clock_publisher_.publish(curr_time);

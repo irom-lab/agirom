@@ -2,6 +2,8 @@
 
 #include "agilib/math/math.hpp"
 
+#include <iostream>
+
 namespace agi {
 
 FeedthroughEstimator::FeedthroughEstimator(
@@ -23,6 +25,7 @@ bool FeedthroughEstimator::initialize(const QuadState& state) {
 
 bool FeedthroughEstimator::addState(const QuadState& state) {
   state_ = params_->transform_enabled_ ? transform(state) : state;
+  std::cout << "[FeedthroughEstimator::addState] state_ = " << state_ << std::endl;
   return state_.valid();
 }
 

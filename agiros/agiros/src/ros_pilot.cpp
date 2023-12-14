@@ -188,6 +188,7 @@ void RosPilot::odometryEstimateCallback(const nav_msgs::OdometryConstPtr& msg) {
   state.v = fromRosVec3(msg->twist.twist.linear);
   state.w = fromRosVec3(msg->twist.twist.angular);
   state.mot = motor_speeds_;
+  std::cout << "[RosPilot::odometryEstimateCallback] motor_speeds_ = " << motor_speeds_ << std::endl;
   pilot_.odometryCallback(state);
 }
 
